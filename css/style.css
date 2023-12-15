@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Ubuntu&display=swap');
+
+:root {
+    --fonte-principal: 'Ubuntu';
+}
+
+* {
+    font-family: var(--fonte-principal);
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+}
+
+body {
+    background-color: #F1F1F6;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #000;
+    text-align: center;
+}
+p {
+    font-size: 1.5rem;
+    color: #000;
+    text-align: center;
+    margin-top: 1.25rem;
+    font-weight: bold;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    margin-top: 1.25rem;
+    gap: 1rem;
+}
+
+.input-user {
+    border-radius: 1rem;
+    background-color: #FFFFFF;
+    padding: 1rem;
+}
+
+.input-user::placeholder {
+    color: #7C7C7C;
+}
+
+.botao {
+    border-radius: 1rem;
+    background-color: #416BAB;
+    padding: 1rem;
+    color: #FFFFFF;
+}
