@@ -47,7 +47,7 @@ form {
     gap: 1rem;
 }
 
-.input-user {
+#input-user {
     border-radius: 1rem;
     background-color: #FFFFFF;
     padding: 1rem;
