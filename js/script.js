@@ -20,11 +20,20 @@ function voltar() {
 document.addEventListener("DOMContentLoaded", async function() {
     let params = new URLSearchParams(window.location.search);
     let username = params.get("username");
+    let userImage = document.getElementById("userImg");
+    let userName = document.getElementById("userName");
     
     await fetch(`https://api.github.com/users/${username}/repos`)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            // Iterar sobre cada repositório
+            data.forEach(repo => {
+                let owner = repo.owner;
+                let avatarUrl = owner.avatar_url;
+                
+                userName.innerHTML = owner.login;
+                userImage.src = avatarUrl;
+            });
         })
         .catch((error) => {
             console.error('Erro:', error);
