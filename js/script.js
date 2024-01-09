@@ -12,9 +12,7 @@ async function pegarUsername(event) {
 
 }
 
-function voltar() {
-    window.location.href = 'index.html';
-}
+const voltar = () => window.location.href = 'index.html';
 
 
 document.addEventListener("DOMContentLoaded", async function() {
@@ -22,27 +20,41 @@ document.addEventListener("DOMContentLoaded", async function() {
     const username = params.get("username");
     const userImage = document.getElementById("userImg");
     const userName = document.getElementById("userName");
-    const tituloCard = document.getElementById("tituloCard");
-    const descricaoCard = document.getElementById("descricaoCard");
-    const button = document.getElementById("button");
-    
+    const repoList = document.getElementById("repoList");
     
     await fetch(`https://api.github.com/users/${username}/repos`)
         .then(response => response.json())
         .then(data => {
+            userImage.src = data[0].owner.avatar_url;
+            userName.innerHTML = data[0].owner.login;    
             // Iterar sobre cada repositório
             data.forEach(repo => {
-                const owner = repo.owner;
-                const avatarUrl = owner.avatar_url;
+                
                 const repoName = repo.name;
                 const repoDescription = repo.description;
                 const linkRepo = repo.svn_url;
+                const divNova = document.createElement("div");
+                const title = document.createElement("p");
+                const description = document.createElement("p");
+                const button = document.createElement("button");
+                const iconButton = document.createElement("img");
 
-                userName.innerHTML = owner.login;
-                userImage.src = avatarUrl;
-                tituloCard.innerHTML = repoName;
-                descricaoCard.innerHTML = repoDescription;
-                button.href = linkRepo;
+                title.innerHTML = repoName;
+                description.innerHTML = repoDescription;
+                button.innerHTML = "<img src='./assets/Vector.svg'> Abrir repositório";
+                button.onclick = () => window.open(linkRepo);
+                iconButton.src = "./assets/Vector.svg";
+                button.className = "button";
+                divNova.className = "card";
+                title.className = "card-title";
+                description.className = "card-description";
+                
+
+                divNova.appendChild(title);
+                divNova.appendChild(description);
+                divNova.appendChild(button);
+                repoList.appendChild(divNova);
+
             });
         })
         .catch((error) => {
