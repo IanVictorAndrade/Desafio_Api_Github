@@ -17,16 +17,16 @@ body {
     display: grid;
     place-items: center;
     height: 62rem;
-    margin-bottom: 7rem;
 }
 
 #repoList {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 75%;
+    margin-bottom: 30%;
 }
 
 
@@ -62,7 +62,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
+    gap: 1.25rem;
     text-align: center;
 }
 
