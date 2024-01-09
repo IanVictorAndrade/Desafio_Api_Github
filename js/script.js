@@ -18,21 +18,31 @@ function voltar() {
 
 
 document.addEventListener("DOMContentLoaded", async function() {
-    let params = new URLSearchParams(window.location.search);
-    let username = params.get("username");
-    let userImage = document.getElementById("userImg");
-    let userName = document.getElementById("userName");
+    const params = new URLSearchParams(window.location.search);
+    const username = params.get("username");
+    const userImage = document.getElementById("userImg");
+    const userName = document.getElementById("userName");
+    const tituloCard = document.getElementById("tituloCard");
+    const descricaoCard = document.getElementById("descricaoCard");
+    const button = document.getElementById("button");
+    
     
     await fetch(`https://api.github.com/users/${username}/repos`)
         .then(response => response.json())
         .then(data => {
             // Iterar sobre cada repositório
             data.forEach(repo => {
-                let owner = repo.owner;
-                let avatarUrl = owner.avatar_url;
-                
+                const owner = repo.owner;
+                const avatarUrl = owner.avatar_url;
+                const repoName = repo.name;
+                const repoDescription = repo.description;
+                const linkRepo = repo.svn_url;
+
                 userName.innerHTML = owner.login;
                 userImage.src = avatarUrl;
+                tituloCard.innerHTML = repoName;
+                descricaoCard.innerHTML = repoDescription;
+                button.href = linkRepo;
             });
         })
         .catch((error) => {
