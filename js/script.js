@@ -26,7 +26,8 @@ document.addEventListener("DOMContentLoaded", async function() {
         .then(response => response.json())
         .then(data => {
             userImage.src = data[0].owner.avatar_url;
-            userName.innerHTML = data[0].owner.login;    
+            userName.innerHTML = data[0].owner.login;
+            userName.href = data[0].owner.html_url;    
             // Iterar sobre cada repositório
             data.forEach(repo => {
                 

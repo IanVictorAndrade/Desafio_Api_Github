@@ -72,4 +72,9 @@ form {
     color: #FFFFFF;
     font-size: 1.25rem;
     height: 4rem;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background-color: #095bad;
 }

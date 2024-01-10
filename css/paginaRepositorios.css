@@ -50,6 +50,7 @@ body {
     padding: 0.7rem;
     font-weight: bold;
     font-family: var(--fonte-principal);
+    text-decoration: none;
 }
 
 #repoList {
@@ -106,6 +107,10 @@ body {
     cursor: pointer;
     display: flex;
     gap: 0.25rem;
+}
+
+.button:hover {
+    background-color: #095bad;
 }
 
 /* Tela Mobile */
