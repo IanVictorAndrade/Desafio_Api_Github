@@ -19,16 +19,29 @@ body {
     height: 62rem;
 }
 
-h1 {
-    font-size: 2.5rem;
-    color: #000;
-    text-align: center;
+.textoPrincipal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
 }
+
+.tituloPagina {
+    height: 2rem;
+    width: 8.25rem;
+}
+
+.textoAuxiliar {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
 section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1.75rem;
 }
 
 form {
@@ -36,7 +49,6 @@ form {
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
-    margin-top: 1.25rem;
     gap: 1rem;
 }
 
@@ -44,6 +56,9 @@ form {
     border-radius: 1rem;
     background-color: #FFFFFF;
     padding: 1rem;
+    width: 20.5rem;
+    height: 1.75rem;
+    font-size: 1.25rem;
 }
 
 .input-user::placeholder {
@@ -55,4 +70,6 @@ form {
     background-color: #416BAB;
     padding: 1rem;
     color: #FFFFFF;
+    font-size: 1.25rem;
+    height: 4rem;
 }
