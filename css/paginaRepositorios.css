@@ -53,6 +53,11 @@ body {
     text-decoration: none;
 }
 
+#userName:hover {
+    text-decoration:underline;
+    color:#095bad
+}
+
 #repoList {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
