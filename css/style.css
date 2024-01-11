@@ -17,6 +17,7 @@ body {
     display: grid;
     place-items: center;
     height: 62rem;
+    overflow: hidden;
 }
 
 .textoPrincipal {
