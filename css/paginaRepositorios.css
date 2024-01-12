@@ -58,7 +58,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     align-items: center;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     width: 75%;
     margin-bottom: 30%;
 }
@@ -113,9 +113,45 @@ body {
     background-color: #095bad;
 }
 
+/* Tela Responsiva 1 */
+@media (max-width: 96rem) {
+    #repoList {
+        justify-content: center;
+        margin: auto;
+    }
+}
+
+/* Tela Responsiva 2 */
+
+@media (max-width: 80rem) {
+    #repoList {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+    }
+    .card {
+        padding: 3.5rem;
+    }
+}
+
+/* Tela Responsiva 3 */
+
+@media (max-width: 60.25rem) {
+    #repoList {
+        display: flex;
+        flex-direction: column;
+    }
+    .card {
+        padding: 1rem;
+    }
+}
+
+
+
 /* Tela Mobile */
 
-@media screen and (max-width: 430px) {
+@media (max-width: 26.75rem) {
     .cabecalho {
         display: flex;
         flex-direction: column;

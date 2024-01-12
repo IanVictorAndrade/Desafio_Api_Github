@@ -12,9 +12,6 @@ async function pegarUsername(event) {
 
 }
 
-const voltar = () => window.location.href = 'index.html';
-
-
 document.addEventListener("DOMContentLoaded", async function() {
     const params = new URLSearchParams(window.location.search);
     const username = params.get("username");
