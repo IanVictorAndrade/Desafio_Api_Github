@@ -10,9 +10,9 @@
 
 body {
     background-color: #F1F1F6;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     place-items: center;
-    height: 100vh;
 }
 
 
@@ -29,8 +29,7 @@ body {
 
 #userData {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    place-items: center;
 }
 
 #userImg {
@@ -57,9 +56,9 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    align-items: center;
-    /* justify-content: flex-start; */
+    place-items: center;
     width: 75%;
+    margin: 0 auto;
     margin-bottom: 30%;
 }
 
@@ -74,8 +73,7 @@ body {
     height: 13rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    place-items: center;
     gap: 1.25rem;
     text-align: center;
 }
@@ -127,8 +125,7 @@ body {
     #repoList {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        justify-content: center;
-        align-items: center;
+        place-items: center;
     }
     .card {
         padding: 3.5rem;
@@ -151,7 +148,7 @@ body {
 
 /* Tela Mobile */
 
-@media (max-width: 26.75rem) {
+@media (max-width: 27rem) {
     .cabecalho {
         display: flex;
         flex-direction: column;
@@ -185,6 +182,7 @@ body {
         width: 94%;
         height: 100%;
         border-radius: 2.5rem;
+        padding: 2rem;
     }
 
     .card-title {
@@ -202,10 +200,16 @@ body {
     #repoList {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        place-items: center;
         width: 70%;
         gap: 1.25rem;
     }
 
+}
+
+
+@media (max-width: 23.5rem) {
+    #repoList {
+        place-items: center;
+    }
 }
